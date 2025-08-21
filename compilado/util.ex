@@ -5,7 +5,7 @@ defmodule Util do
 
   end
   def pedir_dato()do
-    IO.gets("sus datos: ")
+    IO.gets("su dato: ")
     |> String.trim()
   end
 end
