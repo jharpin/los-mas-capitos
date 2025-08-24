@@ -1,12 +1,17 @@
 import javax.swing.JOptionPane;
 
 public class LongitudPalabra {
-    public static void main(String[] args) {
-        String palabra = JOptionPane.showInputDialog("Digite una palabra:");
-        
-        // "Elixir" devuelve la longitud
-        int longitud = palabra.length();
-        
-        JOptionPane.showMessageDialog(null, "La longitud de la palabra es: " + longitud);
+   public static void  main(String[] args) {
+
+    if(args.length > 0 && args[0].equals("input")) {
+        String mensaje = args[1];
+        String input = JOptionPane.showInputDialog(null, mensaje);
+
+        System.out.println(input);
+    } else if (args.length > 0) {
+        JOptionPane.showMessageDialog(null, args[0]);
+    }else {
+        JOptionPane.showMessageDialog(null, "Mensaje no recibido");
     }
+   }
 }
