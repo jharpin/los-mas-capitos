@@ -1,10 +1,18 @@
 defmodule Util do
-  def mostrar_mensaje(mensaje)do
-   mensaje
-   |>IO.puts
-
+  @moduledoc """
+  Módulo de utilidades para mostrar mensajes y solicitar datos al usuario
+  a través de la terminal.
+  """
+  def mostrar_mensaje(mensaje) do
+    mensaje
+    |> IO.puts()
   end
-  def pedir_dato()do
+
+  @doc """
+  Solicita un dato al usuario desde la terminal y devuelve el valor ingresado,
+  sin espacios ni saltos de línea.
+  """
+  def pedir_dato() do
     IO.gets("su dato: ")
     |> String.trim()
   end
