@@ -1,26 +1,17 @@
 import javax.swing.JOptionPane;
 
 public class Salario {
-    public static void main(String[] args) {
-        String nombre = JOptionPane.showInputDialog("Digite el nombre del empleado:");
-        int horasTrabajadas = Integer.parseInt(JOptionPane.showInputDialog("Digite las horas trabajadas:"));
-        double valorHora = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor por hora:"));
+     public static void  main(String[] args) {
 
-        double salarioBase;
-        double horasExtra = 0;
-        double salarioNeto;
+    if(args.length > 0 && args[0].equals("input")) {
+        String mensaje = args[1];
+        String input = JOptionPane.showInputDialog(null, mensaje);
 
-        if (horasTrabajadas > 160) {
-            salarioBase = 160 * valorHora;
-            horasExtra = (horasTrabajadas - 160) * valorHora * 1.25;
-        } else {
-            salarioBase = horasTrabajadas * valorHora;
-        }
-
-        salarioNeto = salarioBase + horasExtra;
-
-        JOptionPane.showMessageDialog(null,
-                "Empleado: " + nombre +
-                "\nSalario neto: $" + salarioNeto);
+        System.out.println(input);
+    } else if (args.length > 0) {
+        JOptionPane.showMessageDialog(null, args[0]);
+    }else {
+        JOptionPane.showMessageDialog(null, "Mensaje no recibido");
     }
+   }
 }
